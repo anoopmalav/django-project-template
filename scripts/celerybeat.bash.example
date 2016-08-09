@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Name of the application
+NAME="{{ project_name }}_celerybeat"
+
+# Django project directory
+DJANGODIR="/home/{{ project_name }}/{{ project_name }}"
+
+# Error logs
+CELERY_LOG="/home/{{ project_name }}/{{ project_name }}/tmp/logs/celerybeat.log"
+CELERY_DB="/home/{{ project_name }}/{{ project_name }}/tmp/db/celerybeat.db"
+
+# ---------------------------------------------------------------------------------------
+
+# Change to project directory
+cd $DJANGODIR
+
+# Activate the virtual environment
+source env/bin/activate
+
+# Start your Django Celery
+echo "Starting $NAME as `whoami`"
+
+./env/bin/celery \
+    --app={{ project_name }}.celery:app beat \
+    --loglevel=INFO
+    --logfile=$CELERY_LOG
+    --schedule=$CELERY_DB
