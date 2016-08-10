@@ -74,8 +74,22 @@ class CityViewSet(viewsets.ReadOnlyModelViewSet):
 
 
 class CountryStateList(generics.ListAPIView):
+    """
+    **Search fields :**
+
+    + `name`
+
+    **Ordering fields :**
+
+    + `code`
+    + `name`
+
+    """
     queryset = State.objects.all()
     serializer_class = StateSerializer
+    filter_backends = (filters.DjangoFilterBackend, filters.OrderingFilter, filters.SearchFilter,)
+    search_fields = ('name',)
+    ordering_fields = ('code', 'name',)
 
     def get_queryset(self):
         queryset = super(CountryStateList, self).get_queryset()
@@ -83,8 +97,21 @@ class CountryStateList(generics.ListAPIView):
 
 
 class StateCityList(generics.ListAPIView):
+    """
+
+    **Search fields :**
+
+    + `name`
+
+    **Ordering fields :**
+
+    + `name`
+    """
     queryset = City.objects.all()
     serializer_class = CitySerializer
+    filter_backends = (filters.DjangoFilterBackend, filters.OrderingFilter, filters.SearchFilter,)
+    search_fields = ('name',)
+    ordering_fields = ('name',)
 
     def get_queryset(self):
         queryset = super(StateCityList, self).get_queryset()
