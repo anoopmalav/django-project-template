@@ -55,6 +55,9 @@ Any of these options can be added, modified, or removed as you like after creati
 - Install Django 1.8 ($ sudo apt-get install python-django )
 - $ django-admin startproject --template http://gitlab.finoit.com/python/django-project-template/repository/archive.zip --extension py,md,rst,html,js,conf,example,bash --name CHANGELOG,project_name,project_name-ssl projectname
 - $ cd projectname
+- Create virtual environment and activate.
+- $ virtualenv -p /usr/bin/python3.4 env
+- $ source env/bin/activate
 - Uncomment your preferred requirements
 - $ pip install -r requirements.txt
 - $ cp projectname/config/local.py.example projectname/config/local.py

@@ -64,7 +64,7 @@ We recommend using a PostgreSQL database.
 
     # Create a user for {{ project_name|title }}
     # Do not type the 'postgres=#', this is part of the prompt
-    postgres=# CREATE USER {{ project_name }} CREATEDB;
+    postgres=# CREATE USER {{ project_name }} WITH PASSWORD '123456' CREATEDB;
 
     # Create the {{ project_name|title }} production database & grant all privileges on database
     postgres=# CREATE DATABASE {{ project_name }}_production OWNER {{ project_name }};
