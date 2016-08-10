@@ -9,9 +9,10 @@ urlpatterns = patterns('',
     # url(r'^$', '{{ project_name }}.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
+    url(r'^api/v1/', include('{{ project_name }}.routers', namespace='v1')),
+    # url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^', include('{{ project_name }}.libs.regions.urls')),
-    url(r'^', include('{{ project_name }}.libs.currencies.urls')),
 )
 
 
