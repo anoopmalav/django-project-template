@@ -53,7 +53,7 @@ Any of these options can be added, modified, or removed as you like after creati
 
 - Create your working directory ($ mkdir ~/Work; cd ~/Work)
 - Install Django 1.8 ($ sudo apt-get install python-django )
-- $ django-admin startproject --template https://github.com/finoit/django-project-template/zipball/master --extension py,md,rst,html,js --name CHANGELOG,project_name,project_name-ssl projectname
+- $ django-admin startproject --template http://gitlab.finoit.com/python/django-project-template/repository/archive.zip --extension py,md,rst,html,js,conf,example,bash --name CHANGELOG,project_name,project_name-ssl projectname
 - $ cd projectname
 - Uncomment your preferred requirements
 - $ pip install -r requirements.txt

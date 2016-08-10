@@ -2,8 +2,8 @@
 """
 from rest_framework import viewsets, filters
 
-from project_name.libs.currencies.models import Currency
-from project_name.libs.currencies.serializers import CurrencySerializer
+from {{ project_name }}.libs.currencies.models import Currency
+from {{ project_name }}.libs.currencies.serializers import CurrencySerializer
 
 
 class CurrencyViewSet(viewsets.ReadOnlyModelViewSet):
