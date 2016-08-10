@@ -3,7 +3,7 @@
 from django.conf.urls import patterns, url
 from rest_framework.routers import SimpleRouter
 
-from project_name.libs.currencies import views
+from {{ project_name }}.libs.currencies import views
 
 
 router = SimpleRouter()
